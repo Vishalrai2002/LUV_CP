@@ -1,0 +1,50 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+// void printvec(vector<string>v) // for printing our string input by user
+void printvec(vector<int>v)
+{
+    cout<<"size: "<<v.size()<<endl; // O(1)
+    for(int i=0;i<v.size();i++)
+    {
+        cout<<v[i]<<" ";
+    }
+    cout<<endl;
+}
+
+int main()
+{
+    // int a[10]; //fixed size array can not be increase size
+    vector<int>v;
+    // vector<int>v(5); with size decleration 
+    // vector<int> v(5,3); // pre-filling of the vector with 3
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        int x;
+        cin>>x;
+        v.push_back(x); // O(1) T.C
+    }
+
+    vector<int> v2=v; // O(N);
+    // v2.push_back(5);
+    // printvec(v);
+    // printvec(v2);
+
+    // printvec(v);
+    
+    // string input
+    vector<string>s;
+    int m;
+    cin>>m;
+    for(int i=0;i<m;i++)
+    {
+        string st;
+        cin>>st;
+        s.push_back(st);
+    }
+    // printvec(s);
+    return 0;
+}
