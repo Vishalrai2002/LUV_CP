@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void print(unordered_set<string> &s)
+{
+    for(string value: s){
+        cout<<value<<endl;
+    }
+    cout<<"Using it ->>>>>>"<<endl;
+    // for(auto it=s.begin();it!=s.end();it++)
+    // {
+    //     cout<<(*it)<<endl;
+    // }
+}
+
+int main()
+{
+    // Used where order is not matter
+    unordered_set<string> s;
+    s.insert("abc"); // O(1)
+    s.insert("jkl");
+    s.insert("bcd");
+
+    // It gives output in any order
+    
+    auto it=s.find("abc"); // O(1)
+
+    // if(it!=s.end())
+    // {
+    //     // cout<<(*it)<<endl;
+    //     s.erase(it);
+    // }
+    // s.erase("bcd");
+
+    print(s);
+    return 0;
+}
