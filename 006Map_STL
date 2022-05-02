@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void print(map<int,string> &m)
+{
+        cout<<m.size()<<endl;
+  for(auto value: m)
+    {
+        // there is no need of using a brackert here you can simply write also
+        cout<<(value.first)<<" "<<(value.second)<<endl;
+    }
+    cout<<endl;
+}
+int main()
+{
+    map<int,string> m;
+    m[1]="abc"; // O(log(N))
+    m[5]="cdc";
+    m[3]="acd";
+    m.insert({4,"afg"});
+    // map<int,string> :: iterator it;
+    // for(it =m.begin();it!=m.end();it++)
+    // {
+    //     cout<<(it->first)<<" "<<(it->second)<<endl;
+    // }
+    // cout<<endl;
+    // here is another way of getting our output this is more optimal than our previous
+    /* our output is printed in sorted order
+1 abc
+3 acd
+4 afg
+5 cdc
+    */
+
+//    auto it= m.find(3); // O(log(n));
+   // if 3 key in not present in the map then it will return the the end iterator of the map
+//    if(it==m.end())
+//    {
+//        cout<<"No Value ";
+//    }
+//    else{
+//        cout<<it->first<<" "<<it->second<<endl;
+//           }
+
+//   m.erase(3); // O(log(n));
+
+// if(it!=m.end()){ //to check it is present or not in the map you can erase the value 
+// // in the map that is not prsent in the map if you 
+// // you do this then it will give you a segmenation fault 
+//   m.erase(it); // O(log(n)); also provide the iterator in erase
+// }
+//   m.clear(); 
+
+    print(m);
+
+    return 0;
+}
