@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void print(set<string> &s)
+{
+    for(string value: s){
+        cout<<value<<endl;
+    }
+    cout<<"Using it ->>>>>>"<<endl;
+    // for(auto it=s.begin();it!=s.end();it++)
+    // {
+    //     cout<<(*it)<<endl;
+    // }
+}
+
+int main()
+{
+    set<string> s;
+    s.insert("abc"); // O(log(n))
+    s.insert("jkl");
+    s.insert("bcd");
+// In Sets our output is printed in sorted order and unique order means no duplicate
+    auto it=s.find("abc"); // O(log(n))
+
+    // if(it!=s.end())
+    // {
+    //     // cout<<(*it)<<endl;
+    //     s.erase(it);
+    // }
+    s.erase("bcd");
+
+    print(s);
+    return 0;
+}
