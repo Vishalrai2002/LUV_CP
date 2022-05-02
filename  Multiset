@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void print(multiset<string> &s)
+{
+    for(string value: s){
+        cout<<value<<endl;
+    }
+    cout<<"Using it ->>>>>>"<<endl;
+    // for(auto it=s.begin();it!=s.end();it++)
+    // {
+    //     cout<<(*it)<<endl;
+    // }
+}
+
+int main()
+{
+    multiset<string> s;
+    s.insert("abc"); // O(log(n))
+    s.insert("jkl");
+    s.insert("bcd");
+    s.insert("abc");
+
+    // It gives output in sorted order with duplicates values
+    
+    auto it=s.find("abc"); // O(log(n))
+
+    if(it!=s.end())
+    {
+        // cout<<(*it)<<endl;
+        s.erase(it); // in this only one "abc" is removed 
+    }
+    // s.erase("abc"); // in this case all "abc" is removed
+
+    print(s);
+    return 0;
+}
