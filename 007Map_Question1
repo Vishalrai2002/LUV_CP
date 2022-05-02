@@ -1,0 +1,46 @@
+/* Given N strings, print unique strings in 
+lexiographically order with their frequency
+N<=10^5
+|S|<=100
+
+INPUTS
+8
+abc
+def
+abc
+ghj
+jkl
+ghj
+ghj
+abc
+
+OUTPUT
+abc 3
+def 1
+ghj 3
+jkl 1
+
+*/
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    map<string,int>m; // i take key as a string because i need string are uniques
+    // and in map key are stroed in unique order
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        string s;
+        cin>>s;
+        m[s]++; // to count the frequency
+    }
+    for(auto value: m)
+    {
+        cout<<value.first<<" "<<value.second<<endl; // for print 
+    }
+    cout<<endl;
+    return 0;
+}
