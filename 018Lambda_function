@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+// ALL Lambda function IN STL
+
+bool is_Positive(int x){
+    return x>0;
+}
+
+int main()
+{
+    // cout<<[](int x) {return x+2;}(4)<<endl; // Lambda function 
+    // // cout<<[](int x,int y) {return x+y;}(5,5)<<endl;
+    // auto sum=[](int x,int y) {return x+y;};
+    // cout<<sum(5,5)<<endl;
+    
+    // ALL_OF FUNCTION --> in this if all values of vector are positvei
+    // then it will give true otherwise it will false
+    vector<int>v={-2,-3,-4};
+    
+    // Code to check all values of the vector are positive or not
+    
+    cout<<all_of(v.begin(),v.end(),
+                [](int x) {return x>0;})<<endl; // we pass here lambda function
+    // // It's output is 1 that means true             
+    
+    // cout<<all_of(v.begin(),v.end(),is_Positive)<<endl; // we passed here function 
+    
+    // ANY_OF FUNCTION --> in this if a single values return true than our 
+    // output return true 
+    cout<<any_of(v.begin(),v.end(),
+          [](int x){return x>0;})<<endl;
+   
+   
+   // NONE_OF --> if no one match then it will return true otherwise
+   // it will return false --> agar koi bhi match nahi krega toh hi true
+   // nahi toh false
+    
+    cout<<none_of(v.begin(),v.end(),
+    [](int x){return x>0;})<<endl;
+    
+    
+
+    
+    return 0;
+}
